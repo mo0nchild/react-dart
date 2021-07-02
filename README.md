@@ -1,2 +1,1 @@
-# react-dart
-Working with React Framework in Dart Language
+An absolute bare-bones web app.
