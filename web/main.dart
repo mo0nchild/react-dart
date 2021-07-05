@@ -1,23 +1,29 @@
 import 'dart:html';
+import 'dart:js' as js;
 
 import 'package:react/react.dart' as react;
 import 'package:react/react_dom.dart' as react_dom;
 
 var CoolWidget = react.registerComponent2(() => CoolWidgetComponent());
 
+Map<String, dynamic> Styles({border, borderRadius, color, margin, textAlign}) =>
+    {
+      'border': border,
+      'textAlign': textAlign,
+      'color': color,
+      'borderRadius': borderRadius,
+      'margin': margin
+    };
+
 Map<dynamic, dynamic> styles = {
-  'button': {
-    'border': '2px solid purple',
-    'borderRadius': '10px',
-    'margin': '1rem'
-  },
-  'div': {
-    'border': '2px solid black',
-    'textAlign': 'center',
-    'color': 'purple',
-    'borderRadius': '20px',
-    'margin': '1rem 1rem'
-  }
+  'button':
+      Styles(border: '2px solid purple', margin: '1rem', borderRadius: '10px'),
+  'div': Styles(
+      border: '2px solid black',
+      borderRadius: '30px',
+      color: 'purple',
+      textAlign: 'center',
+      margin: '2rem 10rem')
 };
 
 class CoolWidgetComponent extends react.Component2 {
